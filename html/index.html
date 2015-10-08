@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>广东货源网</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8/9/10">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">	
+	<link rel="stylesheet" type="text/css" href="../css/common.css">	
+	<link rel="stylesheet" type="text/css" href="../css/index.css">	
+	<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<!-- 搜索部分开始 -->
+		<div class="search-section tac mt_60">
+			<form class="form-inline">
+				<label>
+					<img src="../img/logo.png">
+				</label>
+				<input type="text" class="search form-control" placeholder="产品搜索">
+				<button type="button" class="btn btn-primary"> 搜 索 </button>
+			</form> 
+		</div>
+		<!-- 搜索部分结束 -->
+		<!-- 导航菜单开始 -->
+		<div class="nav">
+			<ul class="row">
+				<li class="col-md-2 active">主页</li>		
+				<li class="col-md-2">货源搜索</li>		
+				<li class="col-md-2">代发货</li>		
+				<li class="col-md-2">发布广告</li>		
+				<li class="col-md-2">资讯快报</li>		
+				<li class="col-md-2 border-none">广告联系</li>		
+				<li class="active_bg"></li>	
+			</ul>
+		</div>
+		<!-- 导航菜单结束 -->
+
+	</div>
+<script type="text/javascript">
+	$(function(){
+		//菜单滑动
+		window._M = {
+			init:function(){
+				_M.navSlider();
+			},
+			navSlider:function(){
+				$('.row li').on('mouseenter',function(){
+					var thisLiPositon = $(this).position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+				})
+				$('.row li').on('click',function(){
+					$('.row li').removeClass('active');
+					$(this).addClass('active');
+				})
+				
+				$('.row li').on('mouseleave',function(){
+					var thisLiPositon = $('.row  li.active').position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+				})
+				}
+		}
+		_M.init();	
+})
+</script>
+</body>
+</html>
