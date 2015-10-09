@@ -1,0 +1,41 @@
+.header-ad{
+	margin-top: 10px;
+	height: 50px;
+	line-height: 50px;
+}
+.mch-section{
+	margin-top: 20px;
+	border:1px solid #dcdcdc;
+	padding: 10px;
+}
+.mch-title h2{
+	float: left;
+}
+.mch-title a{
+	line-height: 24px;
+}
+.mch-body-ad li{
+	float: left;
+	margin-left: 2%;
+	margin-top: 1%;
+}
+.left-title{
+	width: 18%;
+	vertical-align: middle;
+	background-color: #cdcdcd;
+	text-align: center;
+	padding: 10px 0px;
+}
+.left-title h3{
+	color: #fff;
+	font-weight: bold;
+}
+.right-goods-supply li {
+	float: left;
+	margin-left: 1.5%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.supply table{
+	border: 1px solid #dcdcdc;
+}
