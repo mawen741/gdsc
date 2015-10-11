@@ -1,0 +1,10 @@
+ .thead{
+	width: 100%;
+	text-align: center;
+	background-color: gold;
+	font-size: 20px;
+	font-weight: bold;
+}
+table tbody td{
+	padding-top: 20px;
+}

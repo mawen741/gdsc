@@ -1,0 +1,21 @@
+.shipping-section{
+	border: 1px solid #dcdcdc;
+	padding-bottom: 10px;
+}
+.shipping-section h1{
+	width: 100%;
+	background-color: gold;
+	text-align: center;
+	padding: 5px 0px;
+}
+.shipping-section .show-more{
+	float: right;
+	margin-top: -30px;
+	margin-right: 30px;
+}
+.dengshi-shipping li,.chaye-shipping li,.fuzhuang-shipping li{
+	width: 220px;
+	float: left;
+	margin-left: 25px;
+	margin-top: 10px;
+}

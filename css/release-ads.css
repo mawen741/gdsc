@@ -1,0 +1,20 @@
+.release-title{
+	width: 100%;
+	background-color: #FFD700;
+	text-align: center;
+	padding: 5px 0px;
+}
+.form-group{
+	padding-left: 25%;
+}
+.form-control{
+	display: inline-block;
+	width: 220px;
+}
+input[type="file"]{
+	display: inline-block;
+	width: 75px;
+}
+.glyphicon-ok{
+	color: red;
+}

@@ -1,0 +1,42 @@
+
+.left-title{
+	width: 18%;
+	vertical-align: middle;
+	background-color: #cdcdcd;
+	text-align: center;
+	padding: 10px 0px;
+}
+.left-title h3{
+	color: #fff;
+	font-weight: bold;
+}
+.right-goods-supply li {
+	float: left;
+	margin-left: 1.5%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.supply table{
+	border: 1px solid #dcdcdc;
+}
+.see-more{
+	border: 1px solid #dcdcdc;
+	padding-bottom: 10px;
+}
+.see-more h1{
+	width: 100%;
+	background-color: gold;
+	text-align: center;
+	padding: 5px 0px;
+}
+.see-more .show-more{
+	float: right;
+	margin-top: -30px;
+	margin-right: 30px;
+}
+.see-more-ul li{
+	/*width: 420px;*/
+	float: left;
+	margin-left: 25px;
+	margin-top: 10px;
+}
