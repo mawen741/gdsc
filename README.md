@@ -6,3 +6,7 @@
 子页面查看更多页面  see-more.html  
 详情页面  detail.html  
 搜索页面  search-result.html  
+
+
+用户管理主页 user-main.html
+预存款充值页面 user-charge.html

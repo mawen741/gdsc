@@ -1,0 +1,25 @@
+.start-charge-section h2{
+	background-color: #337AB7;
+	color: #fff;
+	padding: 10px;
+}
+.start-charge-section table td{
+	padding: 7px 5px;
+}
+.pay-style-section{
+	width: 500px;
+	padding: 5px 10px;
+}
+.pay-style-section li{
+	float: left;
+	width: 140px;
+	text-align: center;
+	margin-top: 5px;
+	cursor:pointer;
+}
+.pay-style-section li label{
+	cursor: pointer;
+}
+.pay-style-section li img{
+	vertical-align: top;
+}

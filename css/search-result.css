@@ -1,7 +1,9 @@
  .thead{
 	width: 100%;
 	text-align: center;
-	background-color: gold;
+	color: #fff;
+	padding: 5px;
+	background-color: #6FB0E9;
 	font-size: 20px;
 	font-weight: bold;
 }

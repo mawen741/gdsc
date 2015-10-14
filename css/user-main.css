@@ -1,0 +1,18 @@
+
+.right-child-menu table td{
+	padding: 10px 0px;
+}
+.new-order-section h2{
+	background-color: #337AB7;
+	color: #fff;
+	padding: 10px;
+}
+.new-order-section table th{
+	font-size: 14px;
+	font-weight: bold;
+}
+.new-order-section table td,.new-order-section table th{
+	border: 1px solid #d4d4d4;
+	text-align: center;
+	padding: 5px 0px;
+}

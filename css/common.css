@@ -159,6 +159,10 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	width: 990 !important;
 }
 /* 页面主题 body */
+.row .col-md-2 a{
+	display: block;
+	background-color: none;
+}
 .row .col-md-2{
 	text-align: center;
 	padding: 8px;
@@ -171,9 +175,13 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	}
 	.row .active{
 		color: #fff;
-		background-color: #c00;
+		background-color: #EB4040;
 	}
-.row .col-md-2:hover{
+	.row .col-md-2 a{
+	background-color: none;
+	color: #3c3c3c;
+}
+.row .col-md-2:hover,.row .col-md-2 a:hover{
 	color: #fff;
 }	
 .border{
@@ -195,7 +203,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	position: absolute;
 	width: 165px;
 	height: 37px;
-	background-color: #C00;
+	background-color: #EB4040;
 	z-index: 1;
 }	
 .secNav{
@@ -207,7 +215,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	float: left;
 	width: 16.66666666667%;
 	text-align: center;
-	background-color: #c00;
+	background-color: #EB4040;
 	min-height: 1px;
 }
 .secNav li a{
@@ -217,7 +225,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: #fff;
 }
 .secNav li a:hover{
-	background-color: #fff;
+	background-color: #FFBEBE;
 	color: black;
 }
 .banner-left{
@@ -235,9 +243,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	width: 30%;
 	float: left;
 	margin-left: 5%;
-	margin-top: 1.5%;
+	/*margin-top: 1.5%;*/
 }
-
+.form-group{
+	margin-bottom: 10px;
+}
 .small-img img{
 	width: 20px;
 	height: 20px;
@@ -317,4 +327,35 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 /*分页*/
 .page span,.page a{
 	margin-left: 5px;
+}
+
+/*商家登录后菜单样式*/
+.left-child-menu{
+	width: 200px;
+	float:left;
+}
+.left-child-menu .user-greeting{
+	padding: 10px;
+}
+.left-child-menu ul{
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+.left-child-menu ul li{
+	padding: 5px 10px;
+	border-top: 1px solid #d4d4d4;
+}
+.left-child-menu ul li.menu-head{
+	background-color: #337AB7;
+	color: #fff;
+}
+.right-child-menu{
+	margin-left: 40px;
+	float: left;
+	width: 750px;
+	padding: 10px;
+}
+.carousel-inner{
+	height: 250px;
 }

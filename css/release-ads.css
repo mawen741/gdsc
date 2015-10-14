@@ -1,13 +1,14 @@
 .release-title{
 	width: 100%;
-	background-color: #FFD700;
+	color: #fff;
+	background-color: #6FB0E9;
 	text-align: center;
 	padding: 5px 0px;
 }
-.form-group{
+.form-info .form-group{
 	padding-left: 25%;
 }
-.form-control{
+.form-info .form-control{
 	display: inline-block;
 	width: 220px;
 }
