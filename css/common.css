@@ -156,7 +156,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 
 * html .fixed {position:absolute;top:expression(documentElement.scrollTop + documentElement.clientHeight - this.offsetHeight);}
 .container{
-	width: 990 !important;
+	width: 990px !important;
 }
 /* 页面主题 body */
 .row .col-md-2 a{
