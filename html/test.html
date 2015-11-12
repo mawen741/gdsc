@@ -1,0 +1,201 @@
+<html>
+<head>
+	<title>demo </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8/9/10">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">	
+	<link rel="stylesheet" type="text/css" href="../css/common.css">	
+	<link rel="stylesheet" type="text/css" href="../css/detail.css">	
+	<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<style>
+		.mouseOverSection{
+			display: inline-block;
+			padding: 5px 10px;
+		}
+		.mouseOverBody{
+			position: absolute;
+			/*display: inline-block;*/
+			border:1px solid #dcdcdc;
+			width: 300px;
+			height: 200px;
+		}
+		.mouseOverBody img.touxiang {
+			padding-right: 10px;
+			border-right: 1px solid #dcdcdc;
+		}
+		.mouseOverContent{
+			display: inline-block;
+			padding: 10px;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div class="container rel mb_20">
+	<div class="row">
+		<div style="margin-top:300px;"></div>	
+		<ul>
+		<!-- data-content依次是头像图片的src，商家名称；公司地址；手机电话；QQ号码；厂家简介；注册时间；每个按||分隔，不存在的就传空就行了 -->
+			<li class="ml_35 mouseOverSection" data-content="../img/mch-ico.png||全球鞋业公司||深圳市大安区||13882345432||12345||厂家直销，主营；篮球鞋；运动鞋，休闲鞋 詹姆斯 罗斯 杜兰特 科比篮球鞋，乔丹，阿迪达斯，耐克，NB ；支持零售/批发/订单/放店)...||2015-11-14" >鼠标移上来</li>
+		</ul>
+		
+	</div>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		window._M = {
+			data:{
+				intrval:''
+			},
+			init:function(){
+				//弹窗初始化
+				 $('[data-toggle="popover"]').popover();
+				//导航滑动效果
+				_M.navSlider();
+				//关闭四周弹窗广告效果
+				 $(".close-fixed").click(function(){
+				 	var t = $(this);
+				 	_M.closeAds(t);
+				 })
+				 //鼠标移上去出现广告的效果
+				  $("ul li.mouseOverSection").on("mouseenter",function(e){
+				  	var that = $(this);
+				 	_M.showMouseEnterAds(that,e);
+				 })
+				  //鼠标移除关闭效果
+				  $("ul li.mouseOverSection").on("mouseleave",function(){
+					_M.closeMouseEnterAds();
+				})
+				  //鼠标移动到出现的广告时，广告不消失
+				  $(document).on("mouseenter",".mouseOverBody",function(){
+				  	_M.stopCloseMouseEnterAds();
+				  })
+				  $(document).on("mouseleave",".mouseOverBody",function(){
+				  	_M.closeMouseEnterAds();
+				  })
+			},
+			navSlider:function(){
+				$('#menu li').on('mouseenter',function(){
+					var thisLiPositon = $(this).position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+					var i = $(this).attr("data-value");
+					$("#secMenu li").eq(i).removeClass("invisible");
+					$("#secMenu").css("zIndex",1);
+				})
+				$('#menu li').on('click',function(){
+					$('#menu li').removeClass('active');
+					$(this).addClass('active');
+				})
+				
+				$('#menu li').on('mouseleave',function(){
+					var thisLiPositon = $('#menu  li.active').position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+					$("#secMenu li").addClass("invisible");
+					$("#secMenu").css("zIndex",-1);
+				})
+				$("#secMenu li").on("mouseenter",function(){
+					$("#secMenu li").addClass("invisible");
+					$(this).removeClass("invisible");
+					$("#secMenu").css("zIndex",1);
+
+					var thisLiPositon = $(this).position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+				})
+				$("#secMenu li").on("mouseleave",function(){
+					$("#secMenu li").addClass("invisible");
+					$("#secMenu").css("zIndex",-1);
+
+					var thisLiPositon = $('#menu  li.active').position().left;
+					$('.active_bg').stop(true,false).animate({
+						'left':thisLiPositon
+					},500);
+				})
+			},
+			closeAds:function(t){
+				t.parent(".fixed").animate({opacity:0},1000,function(){t.parent(".fixed").remove();});
+			},
+			showMouseEnterAds:function(that,e){
+				if($(".mouseOverBody").length){
+				 		return false;
+				 	}
+				var eve = e||e.event,
+			 		pageX = parseInt(that.offset().left)-245,
+			 		pageY = parseInt(that.offset().top)-194,
+			 		item = that.attr("data-content").split("||");
+			 	 h = '<div class="mouseOverBody" style="top: '+pageY+'px; left: '+pageX+'px;"><div style="padding:5px;">';
+			 	 h += '<div class="mouseOverContent clearfix">';
+					h += '<img class="fl touxiang" src="'+(item[0] ||'这里可以写个默认头像的地址')+'">';
+					h += '<ul class="fl ml_10">';
+						h += '<li>'+(item[1] ||'这里可以写个默认商家的名字')+'</li>';
+						h += '<li>地址：'+(item[2] ||'这里可以写个默认商家的地址')+'</li>';
+						if(item[3] && item[4]){//如果商家有电话 且有QQ
+							h += '<li><img src="../img/phone.png" />：'+item[3]+' <a href="tencent://message/?uin='+item[4]+'&amp;Site=&amp;Menu=yes" target="_blank" class="small-img"><img src="../img/qq.gif"></a></li>';
+						}
+						if(item[3] && !item[4]){ //如果商家没有qq 但是有电话
+							h += '<li><img src="../img/phone.png" />：'+item[3]+'</li>';
+						}
+						if(!item[3] && item[4]){ //如果商家有qq 但没有电话
+							h += '<li><a href="tencent://message/?uin='+item[4]+'&amp;Site=&amp;Menu=yes" target="_blank" class="small-img"><img src="../img/qq.gif"></a></li>';
+						}
+					h += '</ul>';
+
+				h += '</div>';
+				h += '<div>';
+					h += '<h3>简介：</h3>';
+					h += '<div>'+item[5]+'</div>';
+				h += '</div>';
+				h += '<div>入驻时间：'+(item[6] || '3天前')+'</div>';
+			 	 h += '</div></div>';
+			 	that.after(h);
+			},
+			closeMouseEnterAds:function(){
+				_M.data.intrval = setTimeout(function(){
+						$(".mouseOverBody").remove();
+					},600);
+			},
+			stopCloseMouseEnterAds:function(){
+				clearTimeout(_M.data.intrval);
+			}
+		}
+		_M.init();	
+				
+				
+		// $("ul li.mouseOverSection").each(function(){
+		// 	var that = $(this),
+		// 		item = that.attr("data-content").split("||");
+		// 		var h = '';
+		// 			h += '<div class="mouseOverBody clearfix">';
+		// 				h += '<img class="fl touxiang" src="'+(item[0] ||'这里可以写个默认头像的地址')+'">';
+		// 				h += '<ul class="fl ml_10">';
+		// 					h += '<li>'+(item[1] ||'这里可以写个默认商家的名字')+'</li>';
+		// 					h += '<li>地址：'+(item[2] ||'这里可以写个默认商家的地址')+'</li>';
+		// 					if(item[3] && item[4]){//如果商家有电话 且有QQ
+		// 						h += '<li><img src="../img/phone.png" />：'+item[3]+' <a href="tencent://message/?uin='+item[4]+'&amp;Site=www.baidu.com&amp;Menu=yes" target="_blank" class="small-img"><img src="../img/qq.gif"></a></li>';
+		// 					}
+		// 					if(item[3] && !item[4]){ //如果商家没有qq 但是有电话
+		// 						h += '<li><img src="../img/phone.png" />：'+item[3]+'</li>';
+		// 					}
+		// 					if(!item[3] && item[4]){ //如果商家有qq 但没有电话
+		// 						h += '<li><a href="tencent://message/?uin=3010918647&amp;Site=www.baidu.com&amp;Menu=yes" target="_blank" class="small-img"><img src="../img/qq.gif"></a></li>';
+		// 					}
+							
+		// 				h += '</ul>';
+		// 			h += '</div>';
+		// 		that.attr("data-content",h);
+		// })
+
+		
+})
+</script>
+</body>
+</html>
